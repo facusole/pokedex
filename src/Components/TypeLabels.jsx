@@ -29,14 +29,14 @@ export default function TypeLabels({ pokemonTypes }) {
 
             <span 
                 style={{backgroundColor: colours[pokemonTypes[0].type.name]}}         
-                className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center">
+                className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center uppercase">
                     {pokemonTypes[0].type.name}
             </span>
 
-            {!pokemonTypes[1] ? null :
+            { pokemonTypes[1] &&
                 <span 
                     style={{backgroundColor: colours[pokemonTypes[1].type.name]}}
-                    className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center">
+                    className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center uppercase">
                         {pokemonTypes[1].type.name}
                 </span>       
             }   

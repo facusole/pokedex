@@ -14,7 +14,7 @@ export default function PokemonDetails({ pokemon }) {
     return (
         <div>
             {  !pokemonDetail ?
-                <h1>Loading...</h1>
+                <img src="/pokeballLoader.png" alt="Pokeball Spinner" className="w-12 aspect-square animate-spin"/>
                 :
                 <div className="flex flex-col justify-center items-center">
                     <div className="border border-solid border-black rounded-3xl bg-white my-6">

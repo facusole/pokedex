@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react"
 import TypeLabels from "./TypeLabels"
 
-export default function PokemonDetails({ pokemon }) {
+import '../css/PokemonDetails.css'
+
+export default function PokemonDetails({ pokemon, showDetail, pokemonRef }) {
 
     const [pokemonDetail, setPokemonDetail] = useState(null)
 
@@ -16,9 +18,10 @@ export default function PokemonDetails({ pokemon }) {
             {  !pokemonDetail ?
                 <img src="/pokeballLoader.png" alt="Pokeball Spinner" className="w-12 aspect-square animate-spin"/>
                 :
-                <div className="flex flex-col justify-center items-center">
-                    <div className="border border-solid border-black rounded-3xl bg-white my-6">
-                        <img className="p-6" src={pokemonDetail.sprites.front_default} alt={pokemonDetail.name} />
+                <div className="group flex flex-col justify-center items-center hover:cursor-pointer" /*showDetail={showDetail} ref={pokemonRef}*/>
+                    <div className="border border-solid border-black rounded-3xl bg-white my-6 relative">
+                        <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemonDetail.sprites.front_default} alt={pokemonDetail.name} />
+                        <span className="absolute top-[-12px] right-0 bg-white border border-solid border-black rounded-full py-1 px-4 text-sm group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75">{('#0' + pokemonDetail.id).slice(-5)}</span>
                     </div>
                     <div className="flex gap-1 items-center my-6 h-2">
                         <h1 className="capitalize text-base">{pokemonDetail.name}</h1>

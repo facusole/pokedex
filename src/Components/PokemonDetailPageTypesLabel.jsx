@@ -1,4 +1,4 @@
-export default function TypeLabels({ pokemonTypes }) {
+export default function PokemonDetailPageTypesLabel({ pokemonTypes }) {
     if(!pokemonTypes) return null
 
     const colours = {
@@ -25,11 +25,11 @@ export default function TypeLabels({ pokemonTypes }) {
 
     return (
 
-        <div className="flex flex-col gap-1 text-sm lg:text-xl">
+        <div className="flex gap-1 text-sm lg:text-2xl">
 
             <span 
                 style={{backgroundColor: colours[pokemonTypes[0].type.name]}}         
-                className="rounded-full px-3 lg:px-12 py-1 lg:py-2 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
+                className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
                     {pokemonTypes[0].type.name}
             </span>
 

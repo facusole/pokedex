@@ -5,7 +5,7 @@ export default function PokemonDetailPage({ pokemon }) {
     if (!pokemon) return;
 
     return(
-        <div className="fixed top-[100px] right-0 min-w-[400px] mr-10">
+        <div className="lg:fixed lg:top-[100px] lg:right-0 lg:min-w-[400px] lg:mr-10">
             <div className="flex flex-col justify-center items-center">
                     <div className="border border-solid border-black rounded-3xl bg-white my-6 relative">
                         <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemon.sprites.front_default} alt={pokemon.name} />

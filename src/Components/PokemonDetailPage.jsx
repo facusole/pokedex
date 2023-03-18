@@ -1,12 +1,13 @@
 import PokemonDetailPageTypesLabel from "./PokemonDetailPageTypesLabel";
-
+import { ArrowCircleLeft2 } from 'iconsax-react'
 import '../css/PokemonDetailPage.css'
     
 export default function PokemonDetailPage({ pokemon, openAnimationRef, handleDetailAnimation}) {
 
     return(
         <div className="lg:fixed lg:top-[100px] lg:right-0 lg:min-w-[400px] lg:mr-10 detail__closed" ref={openAnimationRef}>
-            <button className="lg:hidden" onClick={handleDetailAnimation}>VOLVER</button>
+            <button className="pl-3 text-base hover:text-main-red hover:stroke-main-red lg:hidden" onClick={handleDetailAnimation}>
+                <span className="flex items-center transition"><ArrowCircleLeft2 size="24"/>Go back</span></button>
             {pokemon &&
                 <div className="text-center font-medium">
                         <div className="h-[95.5vh] flex flex-col justify-start items-center m-2 border border-solid border-black rounded-3xl">

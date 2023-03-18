@@ -25,18 +25,18 @@ export default function PokemonDetailPageTypesLabel({ pokemonTypes }) {
 
     return (
 
-        <div className="flex gap-1 text-sm lg:text-2xl">
+        <div className="flex gap-1 text-xl lg:text-2xl">
 
             <span 
                 style={{backgroundColor: colours[pokemonTypes[0].type.name]}}         
-                className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
+                className="rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
                     {pokemonTypes[0].type.name}
             </span>
 
             { pokemonTypes[1] &&
                 <span 
                     style={{backgroundColor: colours[pokemonTypes[1].type.name]}}
-                    className="rounded-full px-3 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75 ">
+                    className="rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75 ">
                         {pokemonTypes[1].type.name}
                 </span>       
             }   

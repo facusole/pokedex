@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 
 import PokemonDetails from './PokemonDetails'
 
-export default function PokemonList({ filterCondition, setSelected }) {
+export default function PokemonList({ filterCondition, setSelected, handleDetailAnimation}) {
 
     const [limit, setLimit] = useState(20)
     const [isLoading, setIsLoading] = useState(true)
@@ -41,7 +41,7 @@ export default function PokemonList({ filterCondition, setSelected }) {
             .map((pokemon) => {
                 return (
                     <div key={pokemon.name}>
-                        <PokemonDetails pokemon={pokemon} setSelected={setSelected} />
+                        <PokemonDetails pokemon={pokemon} setSelected={setSelected} handleDetailAnimation={handleDetailAnimation}/>
                     </div>
                 )
             })}

@@ -1,21 +1,41 @@
 import PokemonDetailPageTypesLabel from "./PokemonDetailPageTypesLabel";
 
-export default function PokemonDetailPage({ pokemon }) {
-
-    if (!pokemon) return;
+import '../css/PokemonDetailPage.css'
+    
+export default function PokemonDetailPage({ pokemon, openAnimationRef, handleDetailAnimation}) {
 
     return(
-        <div className="lg:fixed lg:top-[100px] lg:right-0 lg:min-w-[400px] lg:mr-10">
-            <div className="flex flex-col justify-center items-center">
-                    <div className="border border-solid border-black rounded-3xl bg-white my-6 relative">
-                        <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemon.sprites.front_default} alt={pokemon.name} />
-                        <span className="absolute top-[-12px] right-0 bg-white border border-solid border-black rounded-full py-1 px-4 text-sm">{pokemon.id < 100 ? ('#0' + pokemon.id).slice(-5) : ('#' + pokemon.id).slice(-5) }</span>
+        <div className="lg:fixed lg:top-[100px] lg:right-0 lg:min-w-[400px] lg:mr-10 detail__closed" ref={openAnimationRef}>
+            <button className="lg:hidden" onClick={handleDetailAnimation}>VOLVER</button>
+            {pokemon &&
+                <div className="text-center font-medium">
+                        <div className="h-[95.5vh] flex flex-col justify-start items-center m-2 border border-solid border-black rounded-3xl">
+                                <div className="border border-solid border-black rounded-3xl bg-white my-4 relative">
+                                    <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemon.sprites.front_default} alt={pokemon.name} />
+                                    <span className="absolute top-[-12px] right-0 bg-white border border-solid border-black rounded-full py-1 px-4 text-sm">{pokemon.id < 100 ? ('#0' + pokemon.id).slice(-5) : ('#' + pokemon.id).slice(-5) }</span>
+                                </div>
+                                <div className="gap-1 items-center h-2">
+                                    <h1 className="capitalize text-xl my-2">{pokemon.name}</h1>
+                                    <PokemonDetailPageTypesLabel pokemonTypes={pokemon.types} />
+                                    <div className="px-6 py-6 my-6 bg-white border-2 border-solid border-black rounded-3xl grid place-items-center gap-4">
+                                        <div className="flex items-center gap-2"><span className="rounded-full border border-black px-3 py-1 w-[8ch] bg-purple-200 mx-auto">{pokemon.height*10 + 'cm'}</span><span className="rounded-full border border-black px-3 py-1 w-[8ch] bg-purple-200 mx-auto">{pokemon.weight/10 + "kg"}</span></div>
+                                        <div className="flex items-center gap-2"><span className="rounded-full border border-black px-3 py-1 w-[8ch] mx-auto">Height</span><span className="rounded-full border border-black px-3 py-1 w-[8ch] mx-auto">Weight</span></div>
+                                    </div>
+                                    <div className="px-6 py-6 my-6 bg-white border-2 border-solid border-black rounded-3xl">
+                                        <h3>Stats</h3>
+                                        <ul>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">HP</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[0].base_stat}</span></li>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">Attack</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[1].base_stat}</span></li>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">Defense</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[2].base_stat}</span></li>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">S-Attack</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[3].base_stat}</span></li>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">S-Defense</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[4].base_stat}</span></li>
+                                            <li className="flex justify-between items-center gap-8 my-2"><span className="rounded-full border border-black px-4 py-2 w-[12ch]">Speed</span> <span className="rounded-full border border-black px-4 py-2 w-[6ch] bg-purple-200 mx-auto">{pokemon.stats[5].base_stat}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
-                    <div className="gap-1 items-center my-6 h-2">
-                        <h1 className="capitalize text-base">{pokemon.name}</h1>
-                        <PokemonDetailPageTypesLabel pokemonTypes={pokemon.types} />
-                    </div>
-                </div>
+            }  
         </div>
     )
 }

@@ -8,19 +8,18 @@ export default function PokemonDetailPageTypesLabel({ pokemonTypes }) {
         water: '#E3EFFF',
         flying: '#D7F0FF',
         bug: '#EEFFB0',
-
-        normal: '#A8A77A',
-        electric: '#F7D02C',
-        ice: '#96D9D6',
-        fighting: '#C22E28',
-        ground: '#E2BF65',
-        psychic: '#F95587',
-        rock: '#B6A136',
-        ghost: '#735797',
-        dragon: '#6F35FC',
-        dark: '#705746',
-        steel: '#B7B7CE',
-        fairy: '#D685AD',
+        normal: '#EBEAE0',
+        electric: '#fdf4ce',
+        ice: '#daf1f0',
+        fighting: '#f6d6d5',
+        ground: '#f7edd4',
+        psychic: '#fdcedd',
+        rock: '#f3efd8',
+        ghost: '#e5dfec',
+        dragon: '#dbcdfe',
+        dark: '#ebe5e0',
+        steel: '#e1e1ea',
+        fairy: '#f2d9e6',
     };
 
     return (
@@ -29,14 +28,14 @@ export default function PokemonDetailPageTypesLabel({ pokemonTypes }) {
 
             <span 
                 style={{backgroundColor: colours[pokemonTypes[0].type.name]}}         
-                className="rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
+                className="md:text-2xl rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75">
                     {pokemonTypes[0].type.name}
             </span>
 
             { pokemonTypes[1] &&
                 <span 
                     style={{backgroundColor: colours[pokemonTypes[1].type.name]}}
-                    className="rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75 ">
+                    className="md:text-2xl rounded-full px-12 py-1 mx-auto bg-white border border-solid border-black w-16 grid place-content-center capitalize group-hover:border-r-2 group-hover:border-b-[3px] group-hover:border-black group-hover:rounded-3xl delay-75 ">
                         {pokemonTypes[1].type.name}
                 </span>       
             }   

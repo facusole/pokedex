@@ -14,7 +14,7 @@ export default function PokemonDetailPage({ pokemon, openAnimationRef, handleDet
                 <div className="text-center font-medium">
                     <div className="h-[95.5vh] overflow-y-auto scrollbar-hide flex flex-col justify-start items-center m-2 border border-solid border-black rounded-3xl lg:h-[87vh]">
                         <div className="border border-solid border-black rounded-3xl bg-white my-4 relative">
-                            <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemon.sprites.front_default} alt={pokemon.name} />
+                            <img src={pokemon.sprites.front_default} alt={pokemon.name} />
                             <span className="absolute top-[-12px] right-0 bg-white border border-solid border-black rounded-full py-1 px-4 text-sm">{pokemon.id < 100 ? ('#0' + pokemon.id).slice(-5) : ('#' + pokemon.id).slice(-5)}</span>
                         </div>
                         <div className="gap-1 items-center h-2">

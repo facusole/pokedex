@@ -1,5 +1,6 @@
 import PokemonDetailPageTypesLabel from "./PokemonDetailPageTypesLabel";
 import { ArrowCircleLeft2 } from 'iconsax-react'
+import pokemonSillhouette from '../assets/jigglypuff sillhouette.png'
 
 import '../css/PokemonDetailPage.css'
 
@@ -40,7 +41,7 @@ export default function PokemonDetailPage({ pokemon, openAnimationRef, handleDet
                 :
                 <div className="h-[95.5vh] overflow-y-auto scrollbar-hide flex flex-col justify-start items-center m-2 border border-solid border-black rounded-3xl lg:h-[87vh]">
                     <div className="border border-solid border-black rounded-3xl bg-background my-4 relative">
-                        <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src='../../public/jigglypuff sillhouette.png' alt='Pokemon sillhouette for reference' />
+                        <img className="group-hover:border-r-[3px] group-hover:border-b-2 group-hover:border-black group-hover:rounded-3xl delay-75" src={pokemonSillhouette} alt='Pokemon sillhouette for reference' />
                         <span className="absolute top-[-12px] right-0 bg-background border border-solid border-black rounded-full py-1 px-4 text-sm">#000</span>
                     </div>
                     <div className="w-[20ch] text-center my-auto flex flex-col gap-4">

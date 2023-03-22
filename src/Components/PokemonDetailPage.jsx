@@ -24,6 +24,13 @@ export default function PokemonDetailPage({ pokemon, openAnimationRef, handleDet
                                 <div className="flex items-center gap-2"><span className="rounded-full border border-black px-3 py-1 w-[8ch] bg-purple-200 mx-auto">{pokemon.height * 10 + 'cm'}</span><span className="rounded-full border border-black px-3 py-1 w-[8ch] bg-purple-200 mx-auto">{pokemon.weight / 10 + "kg"}</span></div>
                                 <div className="flex items-center gap-2"><span className="rounded-full border border-black px-3 py-1 w-[8ch] mx-auto">Height</span><span className="rounded-full border border-black px-3 py-1 w-[8ch] mx-auto">Weight</span></div>
                             </div>
+                            <div className="p-6 bg-white border border-solid border-black rounded-3xl grid place-items-center gap-4">
+                                <h3>Abilities</h3>
+                                <div className="flex gap-3">
+                                    <p className="px-4 py-1 bg-[#EEFFE3] border border-solid border-black rounded-full capitalize">{pokemon.abilities[0].ability.name}</p>
+                                    {pokemon.abilities[1] ? <p className="px-4 py-1 bg-[#EEFFE3] border border-solid border-black rounded-full capitalize">{pokemon.abilities[1].ability.name}</p> : null}
+                                </div>
+                            </div>
                             <div className="px-6 py-4 my-2 bg-white border border-solid border-black rounded-3xl">
                                 <h3>Stats</h3>
                                 <ul>
